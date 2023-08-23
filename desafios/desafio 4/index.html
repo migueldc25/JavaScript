@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 4</title>
+    <style>
+        body {
+            background-color: aqua;
+            text-align: center;
+        }
+        button {
+            padding: 20px;
+        }
+        button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o troco</h1>
+    <button id="cp">Comprar produto</button>
+    <script>
+        document.getElementById("cp").onclick = function(){
+            let p = window.prompt("Que produto está a comprar?")
+            let v = Number(window.prompt(`Quanto custa o(a) ${p} que está a comprar?`)).toFixed(2)
+            let vd = Number(window.prompt(`Qual foi o valor que você deu para pagar o(a) ${p} ?`)).toFixed(2)
+            if(vd < v){
+                window.alert(`Você não tem dinheiro suficiente para comprar o produto por falta de ${(v - vd).toFixed(2)}$`)
+            }
+            else{
+                window.alert(`Você comprou ${p} que custou ${v}$. Deu ${vd}$ em dinheiro e vai receber ${(vd - v).toFixed(2)}$ de troco. Volte sempre!`)
+            }
+        }
+    </script>
+</body>
+</html>
